@@ -3,8 +3,9 @@ import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import MagicButton from "./ui/MagicButton";
 import { FaLocationArrow } from "react-icons/fa6";
+import TypewriterEffect from "./TypewriterEffect";
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
     <div className="pb-20 pt-36">
       <div>
@@ -33,9 +34,19 @@ const Hero = () => {
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
             words="Crafting Beautiful and Seemless Experiences"
           />
-          <p className="md:tracking-wider md:text-lg text-sm lg:text-2xl">
-            Hi, I&apos;m Sterlyn, a Fullstack Engineer
-          </p>
+          <div className="flex flex-row justify-center gap-1 md:tracking-wider md:text-lg text-sm lg:text-2xl">
+            <p className="md:tracking-wider md:text-lg text-sm lg:text-2xl">
+              Hi, I&apos;m Sterlyn, a
+            </p>
+            <TypewriterEffect
+              strings={[
+                "Fullstack Engineer.",
+                "Mobile Developer.",
+                "Game Developer.",
+                "UI/UX Designer.",
+              ]}
+            />
+          </div>
           <a href="#about">
             <MagicButton
               title="Show my work"
