@@ -15,7 +15,13 @@ const RecentProjects = () => {
             key={id}
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
           >
-            <ThreeDCardDemo title={title} href={link} img={img} des={des} />
+            <ThreeDCardDemo
+              title={title}
+              href={link}
+              img={img}
+              des={des}
+              iconLists={iconLists}
+            />
           </div>
         ))}
       </div>

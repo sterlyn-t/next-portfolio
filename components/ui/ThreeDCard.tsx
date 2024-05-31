@@ -11,12 +11,19 @@ interface ThreeDCardDemoProps {
   img: string;
   href: string;
   des: string;
+  iconLists: string[];
 }
 
-export function ThreeDCardDemo({ title, img, href, des }: ThreeDCardDemoProps) {
+export function ThreeDCardDemo({
+  title,
+  img,
+  href,
+  des,
+  iconLists,
+}: ThreeDCardDemoProps) {
   return (
     <CardContainer className="inter-var">
-      <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+      <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-2xl p-6 border">
         <CardItem translateZ="100" className="w-full mt-2">
           <Image
             src={img}
@@ -39,23 +46,39 @@ export function ThreeDCardDemo({ title, img, href, des }: ThreeDCardDemoProps) {
         >
           {des}
         </CardItem>
-        <div className="flex justify-between items-center mt-20">
+        <CardItem translateZ="60">
+          <div className="flex items-center justify-between mt-7 mb-3">
+            <div className="flex items-center">
+              {iconLists.map((icon, index) => (
+                <div
+                  key={icon}
+                  className="border border-white/[0.2] rounded-full bg-black lg:w-10 lg:h-10 sm:w-8 sm:h-8 justify-center items-center flex"
+                  style={{ transform: `translateX(-${5 * index * 2}px)` }}
+                >
+                  <img src={icon} alt={icon} className="p-2" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </CardItem>
+        <div className="flex justify-between items-center mt-2">
           <CardItem
             translateZ={20}
             as={Link}
-            href="https://twitter.com/mannupaaji"
+            href={href}
             target="__blank"
-            className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+            className="px-4 py-2 rounded-xl text-sm lg:text-md font-normal text-purple"
           >
-            Try now →
+            Check Live Site →
           </CardItem>
-          <CardItem
+          {/* <CardItem
             translateZ={20}
             as="button"
+            href={href}
             className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
           >
-            Sign up
-          </CardItem>
+            Read More
+          </CardItem> */}
         </div>
       </CardBody>
     </CardContainer>
