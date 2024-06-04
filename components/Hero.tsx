@@ -38,14 +38,16 @@ const Hero: React.FC = () => {
             <p className="md:tracking-wider md:text-lg text-sm lg:text-2xl">
               Hi, I&apos;m Sterlyn, a
             </p>
-            <TypewriterEffect
-              strings={[
-                "Fullstack Engineer.",
-                "Mobile Developer.",
-                "Game Developer.",
-                "UI/UX Designer.",
-              ]}
-            />
+            <div className="text-purple">
+              <TypewriterEffect
+                strings={[
+                  "Fullstack Engineer.",
+                  "Mobile Developer.",
+                  "Game Developer.",
+                  "UI/UX Designer.",
+                ]}
+              />
+            </div>
           </div>
           <a href="#about">
             <MagicButton
