@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
           </h2> */}
           <TextGenerateEffect
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
-            words="Crafting Beautiful and Seemless Experiences"
+            words="Crafting Beautiful and Seamless Experiences"
           />
           <div className="flex flex-row justify-center gap-1 md:tracking-wider md:text-lg text-sm lg:text-2xl">
             <p className="md:tracking-wider md:text-lg text-sm lg:text-2xl">
